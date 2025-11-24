@@ -74,8 +74,9 @@ int main( int argc , char * argv[] ) {
     // given.
     
   if( !dataFile )  {
-    dataFile = stdin;
-    fprintf( stderr , "### Using stdin for data input.\n" );
+    fprintf( stderr , "### using stdin in for input not supported.\n");
+    usage( argv[0] ); 
+    exit( EXIT_FAILURE );
   } else {
     fprintf( stderr , "### Using \"%s\" for data.\n" , optarg );
   }
