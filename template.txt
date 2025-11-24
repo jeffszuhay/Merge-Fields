@@ -1,0 +1,15 @@
+to: "|name|" <|email|>
+Subject: Member #month# Dues Reminder
+
+Dear |first|, 
+
+This is a friendly reminder that your membership fee in the 
+amount of $|amount| is due on or around the |day| of this month.
+
+If you have already paid this month's dues, please disregard this notice. If your
+membership status has changed for any reason, please let us know.
+
+Thank you,
+Bill M. Early
+Bill M'HOffen
+Accountants

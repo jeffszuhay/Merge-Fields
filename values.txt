@@ -1,0 +1,4 @@
+name:email:first:amount:day
+Dewy Cheattum:Dewey_Cheattum@AndHowe.esq:Dewy:100.00;1st
+Paige Turner:paige@bookburner.org:Paige:50.00:15th
+Chuck Roast:chuck@sliceanddice.com:Chuck:100:27th
