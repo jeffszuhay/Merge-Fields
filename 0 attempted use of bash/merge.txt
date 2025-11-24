@@ -1,0 +1,115 @@
+ Email merge with Bash
+ ---------------------
+
+
+   ABANDONED!
+   Mac OSX uses Bash 3.2. I found it too finicky and it doesn't have needed features,
+   e.g. -A option for declare.
+
+   Many of the things I need to do, I have already coded and tested in C in my book
+   "Learn C Programming, 2nd Edition"
+
+
+Sources:
+--------
+
+https://stackoverflow.com/questions/73186003/take-a-file-name-as-input-and-check-if-it-exists
+
+  Some useful HOW-TO for bash files.
+
+https://www.linuxjournal.com/content/fun-mail-merge-and-cool-bash-arrays
+https://www.linuxjournal.com/content/finishing-bash-mail-merge-script
+
+  The main problem with these two articles is that they assume you already know quite a
+  bit about how Bash works and that you are on a recent Linux OS. Both of these assumptions
+  do not apply to me.
+
+  Furthermore, they do not provide the full context of command-line invocations nor the
+  completed script. 
+
+https://github.com/spekulatius/linux-bash-mail-merge
+
+  This is a more complete solution. However, it says "bash" but is really "PHP". 
+  Again, not a road I want to go down.
+
+  Also, I don't want this within the context of a browser as I want have a bit more
+  control, even if it is a bunch of copy/paste/send, before I fully automate with
+  sendmail.
+
+  Hence, the scripting approach is abandoned.
+
+
+Scratch BASH script:
+--------------------
+
+#!/bin/bash
+
+# get dataFile & textFile
+# or show usage
+
+dataFile="$1"
+if [data_file -eq "?"] ; then
+  echo "Usage $0 <dataFile> <bodyFile>"
+  exit
+fi
+
+while [ ! -f "$dataFile" ] ; do
+  echo "Please provide a valid data file:"
+  read dataFile
+done
+
+textFile="$2"
+while [ ! -f "$textFile" ] ; do
+  echo "Please provide a valid text file:"
+  read textFile
+done
+
+Format of data file (fields to be merged)
+----------------------------------------- 
+
+name:email:first:amount:day
+Dewy Cheattum:Dewey_Cheattum@AndHowe.esq:Dewy:100.00;1st
+Paige Turner:paige@bookburner.org:Paige:50.00:15th
+Chuck Roast:chuck@sliceanddice.com:Chuck:100:27th
+
+Template file:
+--------------
+
+to: "|name|" <|email|>
+Subject: Member #month# Dues Reminder
+
+Dear |first|, 
+
+This is a friendly reminder that your membership fee in the 
+amount of $|amount| is due on or the |day| of this month.
+
+If you have already paid this month's dues, please disregard this notice. If your
+membership status has changed for any reason, please let us know.
+
+Thank you,
+Bill M. Early
+Bill M'Hoffen
+Accountants
+
+
+# get field names and values
+
+(( lines++ ))
+
+if [ $lines -eq 1 ] ; then   # field names
+  # variable names
+  declare -a varname=($f1 $f2 $f3 $f4 $f5 $f6 $f7)
+else
+  # values for this line (can contain spaces)
+  declare -a value=("$f1" "$f2" "$f3" "$f4" "$f5"
+     "$f6" "$f7")
+fi
+
+# echo field names and values
+
+for ((i=0; i<${#value[*]}; i++))
+do
+  if [ ! -z "${value[$i]}" ] ; then
+    echo "s/#${varname[$i]}#/${value[$i]}/g"
+  fi
+done
