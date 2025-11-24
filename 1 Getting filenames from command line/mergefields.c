@@ -21,8 +21,8 @@
 
   // Print out parameters
 void usage( char* cmd )  {
-  fprintf( stderr , "usage: %s [-d dataFileName]  [-t templateFileName] [-r resultFileName]\n" , cmd );
-  fprintf( stderr , "  If -d inputFileName is not given, stdin is used.\n" );
+  fprintf( stderr , "usage: %s -d dataFileName  [-t templateFileName] [-r resultFileName]\n" , cmd );
+  fprintf( stderr , "  -d dataFileName is required.\n" );
   fprintf( stderr , "  If -t templateFileName is not given stdout is used and field/value pairs are output.\n\n" );
   fprintf( stderr , "  If -r resultFileName is not given stdout is used.\n\n" );
   exit( EXIT_SUCCESS );
@@ -77,8 +77,11 @@ int main( int argc , char * argv[] ) {
     // given.
   
   if( !dataFile )  {
-    dataFile = stdin;
-    fprintf( stderr , "### Using stdin for data input.\n" );
+//    dataFile = stdin;
+//    fprintf( stderr , "### Using stdin for data input.\n" );
+    fprintf( stderr , "### using stdin in for input not supported.\n");
+    usage( argv[0] ); 
+    exit( EXIT_FAILURE );
   } else {
     fprintf( stderr , "### Using \"%s\" for data.\n" , optarg );
   }
