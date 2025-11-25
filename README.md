@@ -61,6 +61,7 @@ This repository will only show the successful result of each stage of developmen
 The source code is free for you to use and modify as you see fit. 
 By doing so, however, you assume all responsibility for the use of this code
 and hold me in no way liable for any outcome of your use.
+You touched it? Or you broke it? Then you bought it.
 
 
 
