@@ -1,6 +1,7 @@
 /* MergeFields.c -- Part 2
  * Jeff Szuhay
- * 2025-November
+ * Mobile, Alabama
+ * 2025-11-23
  *
  * A line-by-line file reader & field replacement program (think: email merge)
  *
