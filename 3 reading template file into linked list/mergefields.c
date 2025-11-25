@@ -1,7 +1,5 @@
-/* MergeFields.c
+/* MergeFields.c -- Part 3
  * Jeff Szuhay
- * Membership Officer
- * Mobile Makerspace
  * Mobile, Alabama
  * 2025-11-24
  *
@@ -99,7 +97,7 @@ int main( int argc , char * argv[] ) {
 
   /* ======================================================================= */
   
-  CaveManDbg( stderr , "### Process template file into lines.\n" );        /* 2 */
+  CaveManDbg( stderr , "### Process template file into lines.\n" );     /* 2 */
   
   size_t numChars = 0;
   size_t numLines = 0;
@@ -117,22 +115,22 @@ int main( int argc , char * argv[] ) {
 
     while( ( numChars = getline( &line , &lcap , textFile ) ) != -1 ) {
       numLines++;
-      pTextLine = CreateData( line , numChars, false);
-      pNode     = CreateNode ( pTextLine );
+      pTextLine = CreateData( line , numChars, false );
+      pNode     = CreateNode( pTextLine );
       AddNode( pLL , pNode , eBack );
       line = NULL;                   // reset so new line is allocated by getline
     } /* while */
     
-    CaveManDbg( stderr , "### Printing template file\n");
+    CaveManDbg( stderr , "### Printing template file\n" );
     PrintList( pLL , stderr , PrintData );
 
   } else {
     CaveManDbg( stderr , "### Set switch to generate fields and values.\n" );
     useTemplate = false;
   }
-  CaveManDbg( stderr , "### Process data file fields and values.\n" );     /* 3 */
+  CaveManDbg( stderr , "### Process data file fields and values.\n" );  /* 3 */
   
-  CaveManDbg( stderr , "### Write out result file(s).\n" );                /* 4 */
+  CaveManDbg( stderr , "### Write out result file(s).\n" );             /* 4 */
     
   /* ======================================================================= */
   
