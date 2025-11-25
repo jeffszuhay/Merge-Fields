@@ -1,7 +1,5 @@
 /* MergeFields.c -- Part 1
  * Jeff Szuhay
- * Membership Officer
- * Mobile Makerspace
  * Mobile, Alabama
  * 2025-11-23
  *
