@@ -9,7 +9,7 @@
  *                             2nd thru n-lines: data fields
  * Input file: template.txt -- template (text) file with < and > delimited field names 
  *                             to be replaced by corresponding values.
- * Output file: final.txt   -- a single file with all data field lines merged with template 
+ * Output file: results.txt -- a single file with all data field lines merged with template 
  * 
  * This version reads the textfile (template) line-by-line into a singly-linked list
  * and then prints the linked list. Additional data structures were added to support the 
