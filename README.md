@@ -56,12 +56,18 @@ repeat until done
 
 If you follow along, step by step, you should see a logical progression from beginning to end.
 The rationale and choices for each step will be described elsewhere.
-This repository will only show the successful result of each stage of development. 
+This repository will only show the successful result of each stage of development.
 
-The source code is free for you to use and modify as you see fit. 
+If time has passed, and you want to see the progression but I still have not given the rationale
+elsewhere, I recommend that you go from one step to the next, perhaps a day at a time, using a
+diff facility to see what changed between steps. 
+Also, don't forget to play with various inputs and with the test programs.
+
+The source code is free for you to use and modify as you see fit.
+If you use this code, it would be polite if you gave me credit as the original author.
 By doing so, however, you assume all responsibility for the use of this code
-and hold me in no way liable for any outcome of your use.
-You touched it? Or you broke it? Then you bought it.
+and release me from any liability for any outcome of your use of this code.
+In other words, if you touched it or you broke it, then you bought it; it's yours.
 
 
 
