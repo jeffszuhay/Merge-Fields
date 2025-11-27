@@ -55,7 +55,7 @@ repeat until done
 ```
 
 If you follow along, step by step, you should see a logical progression from beginning to end.
-The rational and choices for each step will be described elsewhere.
+The rationale and choices for each step will be described elsewhere.
 This repository will only show the successful result of each stage of development. 
 
 The source code is free for you to use and modify as you see fit. 
