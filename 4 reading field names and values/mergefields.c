@@ -100,13 +100,12 @@ void usage( char* cmd )  {
 }
 
  
-  // 1. read command line for filenames, options
-  // 2. process template file into lines
-  // 3. reading template file into linked list
-  // 4. Process data file fields and values.
-  // 5. Merging values into template lines.
-  // 6. Generating output file(s)
-  // 7. clean up
+  // 1. Read command line for filenames, options
+  // 2. Process template lines into linked list.
+  // 3. Process data file fields and values.
+  // 4. Merging values into template lines.
+  // 5. Generating output file(s)
+  // 6. clean up
 int main( int argc , char * argv[] ) {
   int   ch;
   FILE* dataFile   = NULL;
@@ -162,10 +161,8 @@ int main( int argc , char * argv[] ) {
     ResultLine( stdout , "### No template; generating field/value output.\n" );
   }
   ResultLine( stdout , "\n" );
-
-  /* ======================================================================= */
   
-  MileMarker( stderr , "### Process template file into lines.\n" );     /* 2 */
+  /* ===================================================================== */
   
   ssize_t numFields  = 0;
   size_t  numChars   = 0;
@@ -183,10 +180,14 @@ int main( int argc , char * argv[] ) {
   
   if( textFile ) {
 
+    /* ===================================================================== */
+    
+    MileMarker( stderr , "### Read template lines into linked list.\n" );
+    
     ListNode * pNode;
     TextLine*  pTextLine;
     
-    LinkedList *pLL = CreateLinkedList(); 
+    LinkedList *pLL = CreateLinkedList();                                /* 2 */
 
     while( ( numChars = getline( &line , &lcap , textFile ) ) != -1 ) {
       numLines++;
@@ -218,11 +219,11 @@ int main( int argc , char * argv[] ) {
       
       /* ==================================================================== */
       
-      MileMarker( stderr , "### Merge values into template lines.\n" );  /* 5 */
+      MileMarker( stderr , "### Merge values into template lines.\n" );  /* 4 */
       
       doMerge();
       
-      MileMarker( stderr , "### Write out result file(s).\n" );          /* 6 */
+      MileMarker( stderr , "### Write out result file(s).\n" );          /* 5 */
       
       updateResults();
       
@@ -252,7 +253,7 @@ int main( int argc , char * argv[] ) {
     } /* while */
   } /* else */
   
-  MileMarker( stderr , "### Closing files.\n" );                        /* 7 */
+  MileMarker( stderr , "### Closing files.\n" );                        /* 6 */
   fclose( dataFile );
 
   fflush( resultFile );
