@@ -1,5 +1,5 @@
 to: "|name|" <|email|>
-Subject: Member #month# Dues Reminder
+Subject: Member |month| Dues Reminder
 
 Dear |first|, 
 
