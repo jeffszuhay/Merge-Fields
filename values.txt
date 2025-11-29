@@ -1,5 +1,5 @@
 name|email|first|amount|day
-Dewey Cheattum|Dewey_Cheattum@AndHowe.esq|Dewy|100.00|1st
+Dewey Cheattum|Dewey@CheattumAndHowe.esq|Dewey|100.00|1st
 Paige Turner|paige@bookburner.org|Paige|50.00|15th
 Chuck Roast|chuck@slicendice.com|Chuck|100.00|27th
 Betty Brisquette|bb@slicendice.com|Betty|75.00|8th
