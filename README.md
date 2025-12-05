@@ -38,9 +38,7 @@ Here is the basic outline of development:
 
 4-Reading field names and values
 
-5-Merging values into lines
-
-6-Generating output
+5-Merging values into lines & generating output
 
 Each step will be self-contained in a sub-folder by that name. 
 
