@@ -1,5 +1,6 @@
 to: "|name|" <|email|>
-Subject: Member |month| Dues Reminder
+subject: Member Dues Reminder for the Month of |month|
+from: "Bill M. Early" <Bill_M@EarlyAndHoffen.com>
 
 Dear |first|, 
 
@@ -11,5 +12,5 @@ membership status has changed for any reason, please let us know.
 
 Thank you,
 Bill M. Early
-Bill M'Hoffen
+Bill M. Hoffen
 Accountants At Large
